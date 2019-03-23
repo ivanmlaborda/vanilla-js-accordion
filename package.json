@@ -1,0 +1,27 @@
+{
+  "name": "accordion",
+  "version": "1.0.0",
+  "description": "A vanilla JS reusable accordion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanmlaborda/vanilla-js-accordion.git"
+  },
+  "keywords": [
+    "Accordion",
+    "JS",
+    "SCSS",
+    "Webpack",
+    "Babel",
+    "EsLint"
+  ],
+  "author": "Ivan Martinez Laborda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanmlaborda/vanilla-js-accordion/issues"
+  },
+  "homepage": "https://github.com/ivanmlaborda/vanilla-js-accordion#readme"
+}
