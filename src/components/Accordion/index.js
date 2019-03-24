@@ -39,11 +39,8 @@ export default class Accordion {
   _handleClick(e) {
     e.srcElement.classList.toggle('active')
     const description = e.srcElement.nextElementSibling
+    const { maxHeight } = description.style
 
-    if (description.style.maxHeight) {
-      description.style.maxHeight = null;
-    } else {
-      description.style.maxHeight = description.scrollHeight + "px";
-    } 
+    description.style.maxHeight = maxHeight ? null : (description.scrollHeight + 'px')
   }
 }
