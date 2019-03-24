@@ -1,3 +1,7 @@
 import './styles/styles.scss'
 
-console.log(`Accordion`)
+import Accordion from './components/Accordion'
+
+const myAccordion = new Accordion('#root')
+
+const myOtherAccordion = new Accordion('#root2')

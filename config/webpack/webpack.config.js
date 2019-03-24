@@ -18,6 +18,11 @@ module.exports = ({mode, presets} = {mode: 'production', presets: []}) => {
             use: {
               loader: 'babel-loader'
             }
+          },
+          {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            use: { loader: 'html-loader' }
           }
         ]
       },
