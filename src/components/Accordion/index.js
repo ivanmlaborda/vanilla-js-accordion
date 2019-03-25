@@ -53,15 +53,17 @@ export default class Accordion {
     const element = `<dt>${term.term}</dt>`
     const description = `<dd><p>${term.description}</p></dd>`
 
-    this._mainNode.querySelector('dl').insertAdjacentHTML('beforeend', element)
-    this._mainNode
-      .querySelector('dl')
-      .lastChild.addEventListener('click', this._handleClick)
+    const dlNode = this._mainNode.querySelector('dl')
 
-    this._mainNode
-      .querySelector('dl')
-      .insertAdjacentHTML('beforeend', description)
+    dlNode.insertAdjacentHTML('beforeend', element)
+    dlNode.lastChild.addEventListener('click', this._handleClick)
+    this._appendChild()
 
+    dlNode.insertAdjacentHTML('beforeend', description)
+    this._appendChild()
+  }
+
+  _appendChild() {
     this._childs = [
       ...this._childs,
       this._mainNode.querySelector('dl').lastChild
