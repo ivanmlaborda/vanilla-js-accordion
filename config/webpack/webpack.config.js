@@ -10,6 +10,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: []}) => {
   return webpackMerge(
     {
       mode,
+      entry: ['@babel/polyfill', './src/index.js'],
       module: {
         rules: [
           {
@@ -22,7 +23,7 @@ module.exports = ({mode, presets} = {mode: 'production', presets: []}) => {
           {
             test: /\.html$/,
             exclude: /node_modules/,
-            use: { loader: 'html-loader' }
+            use: {loader: 'html-loader'}
           }
         ]
       },

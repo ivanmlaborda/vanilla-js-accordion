@@ -1,4 +1,4 @@
-const template = require('./template.html')
+import * as template from './template.html'
 import './_accordion.scss'
 
 export default class Accordion {
@@ -33,14 +33,22 @@ export default class Accordion {
   }
 
   _registerEventListeners() {
-    this._childs.filter(child => child.tagName === 'DT').forEach(term => term.addEventListener('click', this._handleClick))
+    this._childs
+      .filter(child => child.tagName === 'DT')
+      .forEach(term => term.addEventListener('click', this._handleClick))
   }
 
   _handleClick(e) {
     e.srcElement.classList.toggle('active')
     const description = e.srcElement.nextElementSibling
-    const { maxHeight } = description.style
+    const {maxHeight} = description.style
 
-    description.style.maxHeight = maxHeight ? null : (description.scrollHeight + 'px')
+    description.style.maxHeight = maxHeight
+      ? null
+      : description.scrollHeight + 'px'
+  }
+
+  addTo(termsArr) {
+    console.log('terms arr', termsArr)
   }
 }
