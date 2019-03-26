@@ -25,12 +25,24 @@ export default class Accordion {
 
   _setChildren() {
     this._addMarkup()
+    this._addClasses()
     this._registerEventListeners()
   }
 
   _addMarkup() {
-    this._mainNode.innerHTML = `<div class="Accordion">${this._markup}</div>`
+    this._mainNode.innerHTML = this._markup
     this._childs = [...this._mainNode.querySelector('dl').children]
+  }
+
+  _addClasses() {
+    this._mainNode.querySelector('dl').classList.add('Accordion')
+    this._childs.forEach(child => {
+      child.tagName === 'DT' && child.classList.add('Accordion-term')
+      if (child.tagName === 'DD') {
+        child.classList.add('Accordion-description')
+        child.querySelector('p').classList.add('Accordion-description-text')
+      }
+    })
   }
 
   _registerEventListeners() {
@@ -40,18 +52,22 @@ export default class Accordion {
   }
 
   _handleClick(e) {
-    e.srcElement.classList.toggle('active')
+    e.srcElement.classList.toggle('is-active')
     const description = e.srcElement.nextElementSibling
     const {maxHeight} = description.style
 
+    description.classList.toggle('is-extended')
     description.style.maxHeight = maxHeight
       ? null
       : description.scrollHeight + 'px'
   }
 
   _insertElement(term) {
-    const element = `<dt>${term.term}</dt>`
-    const description = `<dd><p>${term.description}</p></dd>`
+    const element = `<dt class="Accordion-term">${term.term}</dt>`
+    const description = `
+    <dd class="Accordion-description"><p class="Accordion-description-text">${
+      term.description
+    }</p></dd>`
 
     const dlNode = this._mainNode.querySelector('dl')
 

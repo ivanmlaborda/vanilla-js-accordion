@@ -1,11 +1,12 @@
-dl {
+.Accordion {
   padding: 25px;
 
-  dt {
-    background-color: #eee;
+  &-term {
+    @include background($green-white);
     border: 0;
-    color: #444;
+    color: $black;
     cursor: pointer;
+    font-size: $size-m;
     outline: none;
     padding: 18px;
     text-align: left;
@@ -13,24 +14,28 @@ dl {
     width: 100%;
 
     &:hover {
-      background-color: #ccc;
+      @include background($bison-hide);
+    }
+
+    &.is-active {
+      @include background($bison-hide);
     }
   }
 
-  .active {
-    background-color: #ccc;
-  }
-
-  dd {
-    padding: 0 18px;
-    background-color: white;
+  &-description {
+    @include background($white);
     max-height: 0;
     overflow: hidden;
+    padding: 0 18px;
     transition: max-height .4s ease-out;
-    border: 1px solid #eee;
 
-    p {
-      padding: 18px 0;
+    &.is-extended {
+      border: 1px solid $bison-hide;
+    }
+
+    &-text {
+      font-size: $size-s;
+      padding: 20px 0;
     }
   }
 }

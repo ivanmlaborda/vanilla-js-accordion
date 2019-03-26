@@ -3,6 +3,11 @@ files:
 options:
   formatter: stylish
 rules:
+  class-name-format:
+    - 0
+  nesting-depth:
+    - 1
+    - max-depth: 4
   quotes:
     - 2
     - style: single
@@ -42,4 +47,3 @@ rules:
   indentation:
     - 2
     - size: 2
-  
