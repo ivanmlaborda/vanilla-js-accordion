@@ -3,14 +3,14 @@ dl {
 
   dt {
     background-color: #eee;
+    border: 0;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
     outline: none;
+    padding: 18px;
+    text-align: left;
     transition: .4s;
+    width: 100%;
 
     &:hover {
       background-color: #ccc;

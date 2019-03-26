@@ -29,7 +29,7 @@ export default class Accordion {
   }
 
   _addMarkup() {
-    this._mainNode.innerHTML = this._markup
+    this._mainNode.innerHTML = `<div class="Accordion">${this._markup}</div>`
     this._childs = [...this._mainNode.querySelector('dl').children]
   }
 
