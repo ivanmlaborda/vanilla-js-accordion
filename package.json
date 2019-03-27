@@ -28,7 +28,9 @@
     "prod": "npm run webpack -- --env.mode production",
     "start": "npm run webpack-dev-server -- --env.mode development --hot",
     "lint:js": "eslint --fix src",
-    "lint:sass": "sass-lint src"
+    "lint:sass": "sass-lint src",
+    "push:gh": "git subtree push --prefix dist origin gh-pages",
+    "deploy:gh": "npm run prod && npm run push:gh"
   },
   "sasslintConfig": "./sass-lint.yml",
   "devDependencies": {
