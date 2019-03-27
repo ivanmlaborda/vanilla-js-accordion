@@ -24,6 +24,7 @@
 
   &-description {
     @include background($white);
+    border: 1px solid transparent;
     max-height: 0;
     overflow: hidden;
     padding: 0 18px;

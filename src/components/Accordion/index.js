@@ -7,7 +7,6 @@ export default class Accordion {
     this._mainNode = null
     this._childs = []
     this._markup = template
-    this._insertElement = this._insertElement.bind(this)
 
     this._init()
   }
@@ -62,6 +61,37 @@ export default class Accordion {
       : description.scrollHeight + 'px'
   }
 
+  _updateChilds(childs) {
+    this._childs = childs
+  }
+
+  addTo(termsArr) {
+    const render = new RenderAsyncChilds(
+      this._mainNode,
+      this._childs,
+      termsArr,
+      this._handleClick,
+      this._updateChilds
+    )
+  }
+}
+
+class RenderAsyncChilds {
+  constructor(mainNode, childs, terms, handle, callback) {
+    this._mainNode = mainNode
+    this._childs = childs
+    this._terms = terms
+    this._handle = handle
+    this._callback = callback
+    this._insertElement = this._insertElement.bind(this)
+    this._init()
+  }
+
+  _init() {
+    this._terms.forEach(this._insertElement)
+    this._callback(this._childs)
+  }
+
   _insertElement(term) {
     const element = `<dt class="Accordion-term">${term.term}</dt>`
     const description = `
@@ -72,7 +102,7 @@ export default class Accordion {
     const dlNode = this._mainNode.querySelector('dl')
 
     dlNode.insertAdjacentHTML('beforeend', element)
-    dlNode.lastChild.addEventListener('click', this._handleClick)
+    dlNode.lastChild.addEventListener('click', this._handle)
     this._appendChild()
 
     dlNode.insertAdjacentHTML('beforeend', description)
@@ -84,9 +114,5 @@ export default class Accordion {
       ...this._childs,
       this._mainNode.querySelector('dl').lastChild
     ]
-  }
-
-  addTo(termsArr) {
-    termsArr.forEach(this._insertElement)
   }
 }
