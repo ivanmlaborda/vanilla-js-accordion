@@ -1,13 +1,11 @@
 import './styles/styles.scss'
 
 import Accordion from './components/Accordion'
-import CommonService from './services/commonService'
-
-const service = new CommonService()
+import TermsService from './services/termsService'
 
 const myAccordion = new Accordion('#root')
 const myOtherAccordion = new Accordion('#root2')
 
-service.getTerms().then(data => {
+TermsService.getTerms().then(data => {
   myOtherAccordion.addTo(data)
 })

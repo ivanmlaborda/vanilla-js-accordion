@@ -2,7 +2,7 @@
   padding: 25px;
 
   &-term {
-    @include background($green-white);
+    @include background($bgc-primary);
     border: 0;
     color: $black;
     cursor: pointer;
@@ -14,11 +14,11 @@
     width: 100%;
 
     &:hover {
-      @include background($bison-hide);
+      @include background($bgc-secondary);
     }
 
     &.is-active {
-      @include background($bison-hide);
+      @include background($bgc-secondary);
     }
   }
 
@@ -30,7 +30,7 @@
     transition: max-height .4s ease-out;
 
     &.is-extended {
-      border: 1px solid $bison-hide;
+      border: 1px solid $bgc-secondary;
     }
 
     &-text {

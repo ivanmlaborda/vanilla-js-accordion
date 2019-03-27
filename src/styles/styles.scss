@@ -2,6 +2,7 @@
 @import 'global';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-h2 {
+.Title {
+  font-size: $size-l;
   padding: 25px 25px 0;
 }

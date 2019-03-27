@@ -1,2 +1,4 @@
 const API_URI = 'https://express-api.ivanmlaborda.now.sh/api'
-export {API_URI}
+const TERMS_ENDPOINT = 'terms'
+
+export {API_URI, TERMS_ENDPOINT}
