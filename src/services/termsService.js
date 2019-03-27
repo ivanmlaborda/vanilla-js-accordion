@@ -11,7 +11,7 @@ class TermsService {
     try {
       const {
         data: {data}
-      } = await this.httpClient.get(path.join(API_URI, TERMS_ENDPOINT))
+      } = await this.httpClient.get(`${API_URI}/${TERMS_ENDPOINT}`)
       return data
     } catch (err) {
       console.log(err)
