@@ -1,7 +1,7 @@
 {
   "extends": ["standard", "prettier", "prettier/standard"],
   "parser": "babel-eslint",
-  "plugins": ["prettier", "jest"],
+  "plugins": ["prettier", "jest", "cypress"],
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
