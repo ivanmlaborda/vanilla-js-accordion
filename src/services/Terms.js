@@ -1,13 +1,12 @@
 import axios from 'axios'
-import path from 'path'
 import {API_URI, TERMS_ENDPOINT} from '../../config/environment'
 
-class TermsService {
+class Terms {
   constructor({httpClient}) {
     this.httpClient = httpClient
   }
 
-  async getTerms() {
+  async get() {
     try {
       const {
         data: {data}
@@ -19,4 +18,4 @@ class TermsService {
   }
 }
 
-export default new TermsService({httpClient: axios})
+export default new Terms({httpClient: axios})
