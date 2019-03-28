@@ -29,6 +29,7 @@
     "start": "npm run webpack-dev-server -- --env.mode development --hot",
     "lint:js": "eslint --fix src",
     "lint:sass": "sass-lint src",
+    "test": "jest --watch",
     "deploy:gh": "npm run prod && git subtree push --prefix dist origin gh-pages"
   },
   "sasslintConfig": "./sass-lint.yml",
@@ -37,23 +38,26 @@
     "@babel/plugin-proposal-class-properties": "7.4.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/preset-env": "7.4.2",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "24.5.0",
     "babel-loader": "8.0.5",
     "css-loader": "2.1.1",
     "eslint": "5.15.3",
     "eslint-config-prettier": "4.1.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jest": "22.4.1",
+    "eslint-plugin-node": "8.0.1",
     "eslint-plugin-prettier": "3.0.1",
-    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-standard": "4.0.0",
-    "html-loader": "^0.5.5",
+    "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "jest": "24.5.0",
     "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.11.0",
-    "prettier": "^1.16.4",
-    "sass-lint": "^1.12.1",
+    "prettier": "1.16.4",
+    "sass-lint": "1.12.1",
     "sass-loader": "7.1.0",
     "sass-resources-loader": "2.0.0",
     "style-loader": "0.23.1",
@@ -64,7 +68,7 @@
     "webpack-merge": "4.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.0",
-    "axios": "^0.18.0"
+    "@babel/polyfill": "7.4.0",
+    "axios": "0.18.0"
   }
 }

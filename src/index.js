@@ -1,11 +1,11 @@
 import './styles/styles.scss'
 
 import Accordion from './components/Accordion'
-import TermsService from './services/termsService'
+import Terms from './services/Terms'
 
 const myAccordion = new Accordion('#root')
 const myOtherAccordion = new Accordion('#root2')
 
-TermsService.getTerms().then(data => {
+Terms.get().then(data => {
   myOtherAccordion.addTo(data)
 })
