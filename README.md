@@ -1,6 +1,6 @@
 # 📙 AN ACCORDION REUSABLE COMPONENT WITH VANILLA JS AND SCSS
 
-[Demo](https://ivanmlaborda.github.io/vanilla-js-accordion/)
+👉 [Demo](https://ivanmlaborda.github.io/vanilla-js-accordion/)
 
 This is a handmade accordion component developed with ES6 JS and SCSS SUIT convention.
 The project is bundled with Webpack and transpiled with Babel
@@ -19,7 +19,7 @@ and then
 ```
 npm start
 ```
-`Iy you encounter any problems while running the command above try with Node version 10.14.2`
+`If you encounter any problems while running the command above try with Node version 10.14.2`
 
 ---
 
@@ -37,7 +37,7 @@ The component is packaged with few tests.
 
   - Acceptance criteria: testing the product requirements with Cypress
     ```
-    npm run test:jest
+    npm run test:cypress
     ```
 
 ---
@@ -50,7 +50,7 @@ You only need to instantiate the class Accordion passing a parameter indicating 
 const myAccordion = new Accordion('#root')
 ```
 
-Once instantiated you can pass new terms to the accordion. To achieve this you need to call the addTo method to the instance and pass an array data following the next structure.
+Once instantiated you can pass new terms to the accordion. To achieve this you need to call the addTo method of the instance and pass an array data following the next structure.
 ```
 const data = [
   {
