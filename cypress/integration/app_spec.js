@@ -3,7 +3,7 @@ describe('Acceptation sync data accordion', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('#root container has a Accordion', () => {
+  it('#root container has an Accordion', () => {
     cy.get('#root')
       .find('dl')
       .should('have.class', 'Accordion')
@@ -30,11 +30,6 @@ describe('Acceptation sync data accordion', () => {
       .first()
       .click()
       .should('have.class', 'is-active')
-
-    cy.get('#root')
-      .find('.Accordion')
-      .find('dt')
-      .first()
       .click()
       .should('not.have.class', 'is-active')
   })
@@ -61,38 +56,33 @@ describe('Acceptation AJAX data accordion', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('#root container has a Accordion', () => {
+  it('#root2 container has an Accordion', () => {
     cy.get('#root2')
       .find('dl')
       .should('have.class', 'Accordion')
   })
 
   it('Accordion has a dt element with class "Accordion-term"', () => {
-    cy.get('#root')
+    cy.get('#root2')
       .find('.Accordion')
       .find('dt')
       .should('have.class', 'Accordion-term')
   })
 
   it('Accordion has a dd element with class "Accordion-description"', () => {
-    cy.get('#root')
+    cy.get('#root2')
       .find('.Accordion')
       .find('dd')
       .should('have.class', 'Accordion-description')
   })
 
   it('Clicks on dt elements toggle class "is-active"', () => {
-    cy.get('#root')
+    cy.get('#root2')
       .find('.Accordion')
       .find('dt')
       .first()
       .click()
       .should('have.class', 'is-active')
-
-    cy.get('#root')
-      .find('.Accordion')
-      .find('dt')
-      .first()
       .click()
       .should('not.have.class', 'is-active')
   })
@@ -112,12 +102,13 @@ describe('Acceptation AJAX data accordion', () => {
       .should('have.class', 'is-extended')
   })
 
-  it('Should have 5 dt elements', () => {
+  it('Should have more than 3 dt elements', () => {
     cy.wait('@terms')
     cy.get('#root2')
       .find('dt')
       .should($dt => {
-        expect($dt).to.have.length(5)
+        const count = $dt.length
+        expect(count).to.be.greaterThan(3)
       })
   })
 })
