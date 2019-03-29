@@ -40,5 +40,29 @@ The component is packaged with few tests.
     npm run test:jest
     ```
 
+---
 
+### USAGE:
+
+Create as many accordions as you want.
+You only need to instantiate the class Accordion passing a parameter indicating a selector where you desire to put the accordion.
+```
+const myAccordion = new Accordion('#root')
+```
+
+Once instantiated you can pass new terms to the accordion. To achieve this you need to call the addTo method to the instance and pass an array data following the next structure.
+```
+const data = [
+  {
+    "term": "Section 4 - AJAX",
+    "description": "Section 4 Content..."
+  },
+  {
+    "term": "Section 5 - AJAX",
+    "description": "Section 5 Content..."
+  }
+]
+
+myAccordion.addTo(data)
+```
 
