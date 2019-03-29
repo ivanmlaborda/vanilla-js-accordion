@@ -1,1 +1,7 @@
-{}
+{
+  "baseUrl": "http://localhost:3000",
+  "fixturesFolder": "src/tests/fixtures",
+  "integrationFolder": "src/tests/acceptance",
+  "pluginsFile": "src/tests/acceptance/plugins",
+  "supportFile": "src/tests/acceptance/support"
+}

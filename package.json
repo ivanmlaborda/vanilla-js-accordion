@@ -29,8 +29,8 @@
     "start": "npm run webpack-dev-server -- --env.mode development --hot",
     "lint:js": "eslint --fix src",
     "lint:sass": "sass-lint src",
-    "test": "jest --watchAll",
-    "cypress:open": "cypress open",
+    "test:jest": "jest",
+    "test:cypress": "cypress open",
     "deploy:gh": "npm run prod && git subtree push --prefix dist origin gh-pages"
   },
   "sasslintConfig": "./sass-lint.yml",

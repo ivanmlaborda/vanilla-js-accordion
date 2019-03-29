@@ -1,6 +1,6 @@
 describe('Acceptation sync data accordion', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit(Cypress.config().baseUrl)
   })
 
   it('#root container has an Accordion', () => {
@@ -53,7 +53,7 @@ describe('Acceptation AJAX data accordion', () => {
   beforeEach(() => {
     cy.server()
     cy.route('/api/terms').as('terms')
-    cy.visit('http://localhost:3000')
+    cy.visit(Cypress.config().baseUrl)
   })
 
   it('#root2 container has an Accordion', () => {

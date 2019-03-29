@@ -1,4 +1,4 @@
-import Terms from './Terms'
+import Terms from '../../services/Terms'
 import axios from 'axios'
 
 jest.mock('axios')
