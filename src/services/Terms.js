@@ -7,10 +7,11 @@ class Terms {
   }
 
   async get() {
+    const url = `${API_URI}/${TERMS_ENDPOINT}`
     try {
       const {
         data: {data}
-      } = await this.httpClient.get(`${API_URI}/${TERMS_ENDPOINT}`)
+      } = await this.httpClient.get(url)
       return data
     } catch (err) {
       console.log(err)
