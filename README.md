@@ -21,6 +21,8 @@ npm start
 ```
 `If you encounter any problems while running the command above try with Node version 10.14.2`
 
+> Finally open the browser at [localhost:3000](http://localhost:3000)
+
 ---
 
 The component is packaged with few tests.
